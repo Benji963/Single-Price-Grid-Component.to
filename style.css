@@ -1,0 +1,156 @@
+:root {
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+  --Cyan: hsl(179, 62%, 43%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+  --ff: "Karla", sans-serif;
+  --fw-light: 400;
+  --fw-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff);
+  background-color: var(--Light-Gray);
+}
+
+.wrapper {
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout {
+  display: grid;
+  height: 500px;
+  width: 800px;
+  grid-template-areas:
+    "one one"
+    "two three";
+}
+
+.card:nth-child(1) {
+  grid-area: one;
+  background-color: white;
+  border-radius: 15px 15px 0 0;
+}
+
+.title {
+  color: var(--Cyan);
+  padding: 2.5rem 3rem 1.5rem;
+}
+
+.sub-title {
+  color: var(--Bright-Yellow);
+  padding: 0 3rem 1rem;
+}
+
+.description {
+  color: var(--Grayish-Blue);
+  padding: 0 11.2rem 2.5rem 3rem;
+  font-weight: var(--fw-light);
+  line-height: 1.7;
+  word-spacing: 0.7px;
+}
+
+.card:nth-child(2) {
+  grid-area: two;
+  background-color: darkcyan;
+  height: 270px;
+  width: 400px;
+  border-radius: 0 0 0 15px;
+}
+
+.sub {
+  color: var(--Light-Gray);
+  padding: 2.5rem 0 1rem 3rem;
+}
+
+.per-month {
+  color: var(--Grayish-Blue);
+  display: flex;
+  align-items: center;
+  font-weight: var(--fw-light);
+  padding: 0 0 0.5rem 3rem;
+}
+
+.per-month span {
+  color: var(--Light-Gray);
+  font-size: 2rem;
+  padding-right: 0.7rem;
+  font-weight: var(--fw-bold);
+}
+
+.access {
+  color: var(--Light-Gray);
+  font-weight: var(--fw-light);
+  padding: 0 0 2rem 3rem;
+  word-spacing: 0.7px;
+}
+
+button {
+  display: grid;
+  background-color: var(--Bright-Yellow);
+  color: var(--Light-Gray);
+  font-weight: var(--fw-bold);
+  margin: 0 0 0 3rem;
+  padding: 1rem 6rem;
+  border: 0;
+  border-radius: 10px;
+}
+
+.card:nth-child(3) {
+  grid-area: three;
+  background-color: var(--Cyan);
+  height: 270px;
+  border-radius: 0 0 15px 0;
+}
+
+.why-us {
+  color: var(--Light-Gray);
+  padding: 2.5rem 0 1rem 3rem;
+}
+
+.perks {
+  color: var(--Light-Gray);
+  padding-inline: 3rem 7rem;
+  line-height: 1.6rem;
+}
+
+@media screen and (max-width: 650px) {
+  .wrapper {
+    display: grid;
+    margin: 0 auto;
+    height: 1000px;
+    width: 450px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .layout {
+    display: grid;
+    height: 870px;
+    width: 350px;
+    grid-template-areas:
+      "one"
+      "two"
+      "three";
+    /* grid-template-columns: 1fr 1fr 1fr; */
+  }
+
+  .description {
+    padding: 0 6.5rem 2.5rem 3rem;
+  }
+
+  .card:nth-child(2) {
+    border-radius: 0;
+  }
+
+  .card:nth-child(3) {
+    border-radius: 0 0 15px 15px;
+  }
+}
